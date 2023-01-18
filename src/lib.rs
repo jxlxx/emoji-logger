@@ -118,12 +118,13 @@ pub fn formatted_builder() -> Result<Builder, log::SetLoggerError> {
         let target = record.target();
 
         let time = start_time.elapsed();
+
         let (color, level) = match record.level() {
-            Level::Trace => (Color::Purple, " 🤓 T "),
-            Level::Debug => (Color::Blue, " 🤔 D "),
-            Level::Info => (Color::Green, " 😋 I "),
-            Level::Warn => (Color::Yellow, " 😥 W "),
-            Level::Error => (Color::Red, " 😡 E "),
+            Level::Trace => (Color::Purple, " 🧐 TRACE "),
+            Level::Debug => (Color::Blue,   " 🦄 DEBUG "),
+            Level::Info => (Color::Green,   " 👁  INFO  "),
+            Level::Warn => (Color::Yellow,  " 🥁 WARN  "),
+            Level::Error => (Color::Red,    " 🥲 ERROR "),
         };
 
         let mut module_iter = target.split("::");
