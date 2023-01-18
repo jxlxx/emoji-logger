@@ -149,7 +149,7 @@ pub fn formatted_builder() -> Result<Builder, log::SetLoggerError> {
         writeln!(
             f,
             "{}{}{}> {}",
-            Style::new().on(color).fg(Color::White).paint(level),
+            Style::new().on(color).fg(Color::Black).paint(level),
             Style::new()
                 .on(Color::White)
                 .fg(Color::Black)
